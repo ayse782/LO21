@@ -29,3 +29,20 @@ bool recherche(listc l, int e) {
         return NULL;
     }
 }
+
+//Ayse
+listc insererQueue(listc l, int e) {
+    element *new = (element *)malloc(sizeof(element));
+    new->value = e;
+    new->next = NULL;
+    if (l == NULL) {
+        return new;
+    }else {
+        element *p = l;
+        while (p->next != NULL) {
+            p = p->next;
+        }
+        p->next = new;
+    }
+    return l;
+}
